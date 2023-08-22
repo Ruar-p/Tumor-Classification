@@ -41,7 +41,7 @@ print(device)
 
 
 '''
-# Recommended data pre processing code generates cleaned folders
+# Pre processing step that generates cleaned image folders
 
 def crop_img(img):
     """
@@ -254,7 +254,7 @@ def train_model(model, criterion, optimizer, scheduler, num_epochs=25):
                 optimizer.zero_grad()
 
                 # forward
-                # track history if only in train
+                # track history only if in train
                 with torch.set_grad_enabled(phase == 'Training'):
                     outputs = model(inputs)
                     _, preds = torch.max(outputs, 1)
